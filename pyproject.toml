@@ -1,0 +1,81 @@
+#############
+## Package ##
+#############
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hideit"
+dynamic = ["version"]
+description = "Encrypt files and folders, nothing else"
+authors = [{ name = "Kalebe Chimanski de Almeida", email = "kalebe.chi.almeida@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+  "cryptography>=46.0,<47",
+]
+keywords = [
+    "lock",
+    "hideit",
+    "cli",
+    "crypt",
+    "cryptography",
+    "security",
+    "files",
+    "folders",
+    "file-encryption",
+    "folder-encryption",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Utilities",
+    "Topic :: System :: Archiving",
+    "Topic :: System :: Filesystems",
+    "Typing :: Typed",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Natural Language :: English",
+]
+
+[project.urls]
+Homepage = "https://github.com/Kalebe16/hideit"
+Repository = "https://github.com/Kalebe16/hideit"
+Issues = "https://github.com/Kalebe16/hideit/issues"
+Documentation = "https://github.com/Kalebe16/hideit/blob/main/README.md"
+
+[project.scripts]
+minimal-pong = "hideit.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "hideit.__about__.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["hideit*"]
+
+##########
+## Ruff ##
+##########
+[tool.ruff]
+line-length = 79
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "UP"]
+ignore = ["E501", "B006", "UP037"]
+
+[tool.ruff.format]
+quote-style = "single"
